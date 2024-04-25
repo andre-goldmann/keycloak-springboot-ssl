@@ -29,14 +29,12 @@ services:
       args:
         KEYCLOAK_VERSION: 23.0.3
     environment:
-      KEYCLOAK_USER: keycloak_hero
-      KEYCLOAK_PASSWORD: 8rjFab9E8r13
       KEYCLOAK_HEALTH_ENABLED: true
       KEYCLOAK_METRICS_ENABLED: true
       KEYCLOAK_SPI_THEME_DEFAULT: keycloak
       KEYCLOAK_LOGLEVEL: DEBUG
-      KEYCLOAK_ADMIN: mysuser
-      KEYCLOAK_ADMIN_PASSWORD: mypwd
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: 12345
       DEBUG: true
       #DEBUG_PORT: '*:8787'
       DB_VENDOR: postgres
@@ -44,8 +42,8 @@ services:
       KC_DB_URL_HOST: db
       KC_DB_URL_PORT: 6432
       KC_DB_SCHEMA: keycloak
-      DB_USER: myuser
-      DB_PASSWORD: mypwd
+      DB_USER: admin
+      DB_PASSWORD: 12345
       TZ: Europe/Paris
       KC_HOSTNAME_URL: https://172.25.138.187:8443
       KC_HEALTH_ENABLED: true
@@ -53,7 +51,7 @@ services:
       #KC_HTTPS_CERTIFICATE_FILE: /opt/jboss/keycloak/conf/certificate.pem
       #KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/jboss/keycloak/conf/private.key
       KC_HTTPS_KEY_STORE_FILE: /opt/jboss/keycloak/conf/jdg.digital.p12
-      KC_HTTPS_KEY_STORE_PASSWORD: yourpwd
+      KC_HTTPS_KEY_STORE_PASSWORD: Blade1708
       KC_HTTPS_KEY_STORE_TYPE: PKCS12
     ports:
       - "8443:8443"
@@ -76,8 +74,10 @@ services:
     image: postgres:14.1-alpine
     container_name: db
     restart: on-failure
-    env_file:
-      - ./database.dev.env
+    environment:
+      POSTGRES_DB: project-db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 12345
     expose:
       - "6432" # Publishes 5433 to other containers but NOT to host machine
     ports:
