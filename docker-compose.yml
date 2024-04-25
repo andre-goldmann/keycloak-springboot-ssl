@@ -45,7 +45,7 @@ services:
       DB_USER: admin
       DB_PASSWORD: 12345
       TZ: Europe/Paris
-      KC_HOSTNAME_URL: https://172.25.138.187:8443
+      KC_HOSTNAME_URL: https://changeme:8443
       KC_HEALTH_ENABLED: true
       KC_DB_URL: jdbc:postgresql://db:6432/project-db
       #KC_HTTPS_CERTIFICATE_FILE: /opt/jboss/keycloak/conf/certificate.pem

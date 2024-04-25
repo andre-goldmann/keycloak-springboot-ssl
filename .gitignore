@@ -165,8 +165,6 @@ volumes/
 letsencrypt/
 mysql/
 
-certs
-
 api-gateway/src/main/resources/keystore
 api-gateway/interface/angular
 

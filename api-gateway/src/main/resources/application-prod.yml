@@ -11,8 +11,8 @@ server:
     key-store: classpath:keystore/jdg.digital.p12
     key-store-password: yourpwd
     key-alias: jdg.digital
-    certificate-private-key: file:/opt/apigateway/conf/private.key
-    trust-certificate: file:/opt/apigateway/conf/certificate.pem
+    #certificate-private-key: file:/opt/apigateway/conf/private.key
+    #trust-certificate: file:/opt/apigateway/conf/certificate.pem
 
 logging:
   level:
