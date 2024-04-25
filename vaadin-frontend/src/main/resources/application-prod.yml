@@ -9,8 +9,8 @@ server:
     key-store: classpath:keystore/jdg.digital.p12
     key-store-password: yourpwd
     key-alias: jdg.digital
-    certificate-private-key: file:/opt/forexvaadinfrontend/conf/private.key
-    trust-certificate: file:/opt/forexvaadinfrontend/conf/certificate.pem
+    certificate-private-key: file:/opt/vaadinfrontend/conf/private.key
+    trust-certificate: file:/opt/vaadinfrontend/conf/certificate.pem
 
 spring:
   security:
@@ -18,13 +18,13 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: https://keycloak:8443/realms/forex-frontend-vaadin
-            jwk-set-uri: https://keycloak:8443/realms/forex-frontend-vaadin/protocol/openid-connect/certs
-            token-uri: https://keycloak:8443/realms/forex-frontend-vaadin/protocol/openid-connect/token
+            issuer-uri: https://keycloak:8443/realms/project_admininstrator
+            jwk-set-uri: https://keycloak:8443/realms/project_admininstrator/protocol/openid-connect/certs
+            token-uri: https://keycloak:8443/realms/project_admininstrator/protocol/openid-connect/token
         registration:
           keycloak:
-            client-id: forex-frontend-vaadin-client
-            client-secret: bmKLy4YdvepYASGrRmNndm6DbKyft69M
+            client-id: project_admininstrator_client
+            client-secret: replaceme
             scope:
               - profile
               - email

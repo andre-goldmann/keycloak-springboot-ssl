@@ -8,29 +8,17 @@ server:
       timeout: 1m
 
 spring:
-  datasource:
-    url: jdbc:postgresql://172.31.138.212:6432/vaadin
-    username: nobodysforex
-    password: pwd
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
   security:
     oauth2:
       client:
         provider:
           keycloak:
-            issuer-uri: https://172.25.141.161:8443/realms/forex-frontend-vaadin
-            jwk-set-uri: https://172.25.141.161:8443/realms/forex-frontend-vaadin/protocol/openid-connect/certs
-            token-uri: https://172.25.141.161:8443/realms/oauth2/v1/token
+            issuer-uri: https://172.25.141.161:8443/realms/project_admininstrator
+            jwk-set-uri: https://172.25.141.161:8443/realms/project_admininstrator/protocol/openid-connect/certs
         registration:
           keycloak:
-            client-id: forex-frontend-vaadin-client
-            client-secret: bmKLy4YdvepYASGrRmNndm6DbKyft69M
+            client-id: project_admininstrator_client
+            client-secret: replaceme
             scope:
               - profile
               - email

@@ -9,9 +9,9 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class TokenValidationService {
-    private final String KEYCLOAK_URL = "https://172.25.128.161:8443/realms/forex_admininstrator/protocol/openid-connect/token/introspect";
-    private final String CLIENT_ID = "forex_admininstrator_client";
-    private final String CLIENT_SECRET = "1qFzfPvMEei1ksMIbnC9vkDyxihxtc5P";
+    private final String KEYCLOAK_URL = "https://172.25.128.161:8443/realms/project_admininstrator/protocol/openid-connect/token/introspect";
+    private final String CLIENT_ID = "project_admininstrator_client";
+    private final String CLIENT_SECRET = "replaceme";
 
     private RestTemplate restTemplate;
 
@@ -20,7 +20,7 @@ public class TokenValidationService {
     }
 
     public boolean isValidToken(final String token) {
-        final String url = KEYCLOAK_URL.replace("{realm-name}", "forex_admininstrator");
+        final String url = KEYCLOAK_URL.replace("{realm-name}", "project_admininstrator");
 
         // Create request body
         final MultiValueMap<String, String> body = new LinkedMultiValueMap<>();

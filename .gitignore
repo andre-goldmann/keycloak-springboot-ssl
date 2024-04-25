@@ -166,7 +166,6 @@ letsencrypt/
 mysql/
 
 certs
-./forex-frontend/package-lock.json
 
 api-gateway/src/main/resources/keystore
 api-gateway/interface/angular
