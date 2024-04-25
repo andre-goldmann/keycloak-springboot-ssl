@@ -53,7 +53,7 @@ services:
       #KC_HTTPS_CERTIFICATE_FILE: /opt/jboss/keycloak/conf/certificate.pem
       #KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/jboss/keycloak/conf/private.key
       KC_HTTPS_KEY_STORE_FILE: /opt/jboss/keycloak/conf/jdg.digital.p12
-      KC_HTTPS_KEY_STORE_PASSWORD: Blade1708
+      KC_HTTPS_KEY_STORE_PASSWORD: yourpwd
       KC_HTTPS_KEY_STORE_TYPE: PKCS12
     ports:
       - "8443:8443"
