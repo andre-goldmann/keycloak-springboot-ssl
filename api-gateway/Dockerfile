@@ -25,12 +25,12 @@ WORKDIR /app
 # Set JAVA_HOME environment variable
 #ENV JAVA_HOME /opt/java/openjdk
 
-#COPY certs/certificate.pem /usr/local/share/ca-certificates/
+COPY certs/certificate.pem /usr/local/share/ca-certificates/
 
-#RUN update-ca-certificates
+RUN update-ca-certificates
 
 # Import the CA certificate(s) into the Java truststore
-#RUN keytool -importcert -alias jdg.digital -keystore -cacerts -storepass yourpwd -file /usr/local/share/ca-certificates/certificate.pem -noprompt
+RUN keytool -import -noprompt -trustcacerts -alias jdg.digital -file /usr/local/share/ca-certificates/certificate.pem -keystore $JAVA_HOME\lib\security\cacerts -storepass yourpwd
 
 COPY --from=builder /app/target/api-gateway-0.0.1-SNAPSHOT.jar .
 
