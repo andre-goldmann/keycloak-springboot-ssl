@@ -12,7 +12,7 @@ server:
     key-store-password: yourpwd
     key-alias: jdg.digital
     #certificate-private-key: file:/opt/apigateway/conf/private.key
-    #trust-certificate: file:/opt/apigateway/conf/certificate.pem
+    trust-certificate: file:/opt/apigateway/conf/certificate.pem
 
 logging:
   level:
