@@ -30,7 +30,7 @@ WORKDIR /app
 #RUN update-ca-certificates
 
 # Import the CA certificate(s) into the Java truststore
-#RUN keytool -importcert -alias jdg.digital -keystore -cacerts -storepass Blade1708 -file /usr/local/share/ca-certificates/certificate.pem -noprompt
+#RUN keytool -importcert -alias jdg.digital -keystore -cacerts -storepass yourpwd -file /usr/local/share/ca-certificates/certificate.pem -noprompt
 
 COPY --from=builder /app/target/api-gateway-0.0.1-SNAPSHOT.jar .
 
